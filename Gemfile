@@ -58,4 +58,4 @@ group :production do
   gem 'pg'
 end
 gem 'httparty', '~> 0.18.1'
-gem 'themoviedb', '~> 1.0', '>= 1.0.1'
+gem 'themoviedb-api', '~> 1.3'
