@@ -27,7 +27,7 @@
 
 
                 <% if movieinfo['table']['results'][i]['table']['poster_path'].present? %>
-                <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
+                    <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
                 <%end%>
             </div>
             <% i += 1%>
@@ -49,14 +49,15 @@
                     <% if movieinfo['table']['results'][i]['table']['release_date'].present? %>
                         <p class="release-date"><%= movieinfo['table']['results'][i]['table']['release_date'] %></p>
                     <%end%>
-
-                    <% if movieinfo['table']['results'][i]['table']['poster_path'].present? %>
-                    <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
-                    <%end%>
                 </div>
 
+                    <% if movieinfo['table']['results'][i]['table']['poster_path'].present? %>
+                        <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
+                    <%end%>
+
+
                 <% if movieinfo['table']['results'][i]['table']['poster_path'].present? %>
-                <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
+                    <p><%= image_tag 'https://image.tmdb.org/t/p/w188_and_h282_bestv2' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
                 <%end%>
             </div>
 
