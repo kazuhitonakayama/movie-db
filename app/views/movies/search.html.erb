@@ -11,7 +11,8 @@
 <% @movies.each do |movie| %>
     <script>
         for (let i = 0, l = movie.count; i < l; i++) {
-            <%= movie['table']['results'][i]['table']['title'] %>
+            number = puts i;
+            <%= movie['table']['results'][number]['table']['title'] %>
         }
     </script>
 <% end %>
