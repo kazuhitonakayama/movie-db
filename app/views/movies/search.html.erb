@@ -7,8 +7,11 @@
   <% end %>
 </div>
 
+
 <% @movies.each do |movie| %>
-      <div class="search-info">
-      <%= movie['title'] %>
-      </div>
-<%end%>
+    <script>
+        for (let i = 0, l = movie.count; i < l; i++) {
+            <%= movie['table']['results'][i]['table']['title'] %>
+        }
+    </script>
+<% end %>
