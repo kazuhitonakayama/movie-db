@@ -7,12 +7,35 @@
   <% end %>
 </div>
 
-<div>
-  <% if @movie_results.blank? %>
-    <p>[<%= @search_term %>]と一致する情報が見つかりませんでした</p>
-  <% else %>
-    <% @movie_results.each do |movie| %>
-          <p><%= link_to movie.title %></p>
-    <% end %>
-  <% end %>
-</div>
+<div id="app"></div>
+
+<script>
+fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=64721be267690b71440c6694a651abc1&language=ja-JP&page=1')
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    //取得したJSONデータの処理
+    console.log(data);
+  })
+  .catch(error => {
+    //エラー発生時の処理
+    console.log('error');
+});
+
+data.results.map(movie => {
+  const row = document.createElement('div');
+  row.setAttribute('class', 'item');
+
+  const title = document.createElement('p');
+  title.setAttribute('class', 'title');
+  title.textContent = movie.title;
+
+  const poster = document.createElement('img');
+  poster.src = `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`;
+
+  container.appendChild(row);
+  row.appendChild(poster);
+  row.appendChild(title);
+});
+</script>
