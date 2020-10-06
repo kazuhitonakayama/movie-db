@@ -12,9 +12,9 @@
     <p>[<%= @search_term %>]と一致する情報が見つかりませんでした</p>
   <% else %>
     <% @movie_results.each do |movie| %>
-          <p><%= link_to movie['title'] %></p>
-          <p><%= movie['release_date'] %></p>
-          <p><%= movie['overview'] %></p>
+          <p><%= link_to movie.title %></p>
+          <p><%= movie.release_date %></p>
+          <p><%= movie.overview %></p>
     <% end %>
   <% end %>
 </div>
