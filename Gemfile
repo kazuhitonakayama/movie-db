@@ -59,3 +59,5 @@ group :production do
 end
 gem 'httparty', '~> 0.18.1'
 gem 'themoviedb-api', '~> 1.3'
+gem 'hirb'
+gem 'pry-rails'  # irbの代わりにpryにする
