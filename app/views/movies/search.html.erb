@@ -2,7 +2,8 @@
 
 <div>
   <%= form_tag(root_path, method: :get) do %>
-    <%= search_field_tag :looking_for, nil, placeholder: 'Movie Title...' %>
+    <%= search_field_tag :looking_for, nil, placeholder: 'Movie Title...',value: params[:looking_for] %>
+    <%= search_field_tag :page_for, nil, placeholder: 'Movie Title...',value: params[:page_for] %>
     <%= submit_tag '検索' %>
   <% end %>
 </div>
@@ -10,6 +11,7 @@
 <%if params[:looking_for].present? %>
     <% movieinfo = JSON.parse((Tmdb::Search.movie(params[:looking_for])).to_json) %>
     <h2><%= params[:looking_for] %>の検索結果</h2>
+    <% movieinfo = JSON.parse((Tmdb::Search.movie(params[:looking_for],page: params[:page_for])).to_json) %>
     =====================
     <% i = 0 %>
     <div class="card-wrapper">
@@ -24,8 +26,6 @@
                         <p class="release-date"><%= movieinfo['table']['results'][i]['table']['release_date'] %></p>
                     <%end%>
                 </div>
-
-
                 <% if movieinfo['table']['results'][i]['table']['poster_path'].present? %>
                     <p><%= image_tag 'https://image.tmdb.org/t/p/w1280' + movieinfo['table']['results'][i]['table']['poster_path'],class: "card-img" %></p>
                 <%end%>
