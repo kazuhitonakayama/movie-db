@@ -18,7 +18,7 @@ WORKDIR /movie-db
 COPY Gemfile /movie-db/Gemfile
 COPY Gemfile.lock /movie-db/Gemfile.lock
 
-RUN gem install bundler && bundle install && bundle update
+RUN gem install bundler && bundle install
 
 COPY . /movie-db
 EXPOSE 3000
